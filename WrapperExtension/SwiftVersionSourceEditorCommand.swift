@@ -22,7 +22,7 @@ class SwiftVersionSourceEditorCommand: NSObject, XCSourceEditorCommand {
         let selectedRange = NSRange(location: startIndex, length: endIndex - startIndex)
         let selectedLines = invocation.buffer.lines.subarray(with: selectedRange)
 
-        invocation.buffer.lines.insert("#if swift(>=5.0)", at: startIndex)
+        invocation.buffer.lines.insert("#if swift(>=5.5)", at: startIndex)
         for string in selectedLines.reversed() {
             invocation.buffer.lines.insert(string, at: startIndex + 1)
         }
